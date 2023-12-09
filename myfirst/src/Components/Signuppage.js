@@ -15,11 +15,11 @@ export default function SignUpPage() {
 
 
   const HandleonClick = () => {
-//  if( username ==="" && email==="" && Password ==="" && Password===CPassword)
-//  {
-//   alert("Password Doest Match")
-//   }
-  // else{
+ if( username ==="" && email==="" && Password ==="" && Password===CPassword)
+ {
+  alert("Password Doest Match")
+  }
+  else{
     axios.post("http://localhost:5000/signup", { username: username,email: email, password: Password })
     .then(res => {
       console.log(res.data);
@@ -30,7 +30,7 @@ export default function SignUpPage() {
       console.error(error);
     });
    
-  // }
+  }
 };
   return (
     <>

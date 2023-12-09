@@ -4,7 +4,7 @@ const cors = require("cors");
 const SignUp = require("./Signin");
 require('dotenv').config();
 
-let dbURI = process.env.MONGODB_URI;
+const dbURI = process.env.MONGODB_URI;
 console.log("Hey Server!!!!")
 const app = express();
 mongoose.connect(dbURI)
