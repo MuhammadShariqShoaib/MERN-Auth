@@ -31,7 +31,8 @@ app.post("/signup", async (req, res) => {
       await newLogin.save(); 
     //   res.json({ message: 'Login data saved successfully' });
     console.log("Saved")
-      
+    return res.status(200).json({ message: 'created successful' });
+
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Internal server error' });

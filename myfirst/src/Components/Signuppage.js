@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 // import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';  
 import axios from "axios";
 import { Navigate } from 'react-router-dom';
 
@@ -10,23 +11,26 @@ export default function SignUpPage() {
   const [email,setEmail]=useState("");
   const [Password,setPassword]=useState("");
   const [CPassword,setCPassword]=useState("");
+  let navigate = useNavigate();
+
+
   const HandleonClick = () => {
- if( username ==="" && email==="" && Password ==="" && Password===CPassword)
- {
-  alert("Password Doest Match")
-  }
-  else{
+//  if( username ==="" && email==="" && Password ==="" && Password===CPassword)
+//  {
+//   alert("Password Doest Match")
+//   }
+  // else{
     axios.post("http://localhost:5000/signup", { username: username,email: email, password: Password })
     .then(res => {
       console.log(res.data);
-      <Navigate to="/" />;
+      navigate('/');
       alert("Hurray")
     })
     .catch(error => {
       console.error(error);
     });
    
-  }
+  // }
 };
   return (
     <>
